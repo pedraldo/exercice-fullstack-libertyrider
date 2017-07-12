@@ -1,0 +1,28 @@
+<% include ./partials/header %>
+    <div id="container-wrapper">
+        <img src="/assets/stars.png" alt="" class="container-stars top">
+        <div id="container">
+            <div id="login">
+                <div class="title">
+                    <p>Bienvenue</p>
+                </div>
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="input-container">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="btn-container bottom">
+                    <button id="btn-login" class="cta">Connexion</button>
+                </div>
+            </div>
+            <div id="content" style="display:none;">
+                Hello World !
+                <button id="btn-logout" class="cta">Déconnexion</button>
+            </div>
+        </div>
+        <img src="/assets/stars.png" alt="" class="container-stars bottom">
+    </div>
+<% include ./partials/footer %>

@@ -1,0 +1,136 @@
+@font-face {
+    font-family: "Nunito";
+    src: url('./Nunito/Nunito-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Nunito-ExtraBold";
+    src: url('./Nunito/Nunito-Bold.ttf');
+}
+
+@media (max-width: 375px) {
+    #container#container {
+        width: 230px;
+        height: 345px;
+        padding: 22px;
+    }
+
+    #login#login {
+        padding: 22px;
+    }
+
+    .container-stars.container-stars {
+        height: 170px;
+        width: 170px;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(26deg, #fb6145, #fa455c);
+    position: relative;
+    font-family: Nunito;
+    margin: 0;
+}
+
+input[type="text"], 
+input[type="email"],
+input[type="password"] {
+    border-radius: 4px;
+    height: 20px;
+    border: 1px solid lightgrey;
+    padding-left: 10px;
+    font-family: Nunito;
+    font-size: 14px;
+}
+
+p,
+span,
+label,
+input {
+    color: rgb(74,74,74);
+}
+
+#container-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#container {
+    width: 270px;
+    height: 404px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 12px 17px 9px rgba(0, 0, 0, 0.14);
+    margin: auto;
+    padding: 25px;
+}
+
+#login {
+    padding: 0 25px;
+}
+
+.title {
+    font-family: Nunito-ExtraBold;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase
+}
+
+.container-stars {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    width: 200px;
+    z-index: -1;    
+}
+
+.container-stars.top {
+    top: -75px;
+}
+
+.container-stars.bottom{
+    bottom: -75px;
+}
+
+.cta {
+    width: 182px;
+    height: 34px;
+    border-radius: 8px;
+    background-image: linear-gradient(78deg, #fb6145, #fa455c);
+    box-shadow: 0 12px 34px 0 rgba(183, 183, 183, 0.5);
+    font-family: Nunito;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+}
+
+.input-container {
+    margin: 20px 0;
+}
+
+.input-container label, 
+.input-container input {
+    display: block;
+    width: 100%;
+}
+
+.btn-container {
+    text-align: center;
+}
+
+.btn-container.bottom {
+    margin-top: 40px;
+}
