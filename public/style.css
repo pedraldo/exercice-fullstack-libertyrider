@@ -8,23 +8,6 @@
     src: url('./Nunito/Nunito-Bold.ttf');
 }
 
-@media (max-width: 375px) {
-    #container#container {
-        width: 230px;
-        height: 345px;
-        padding: 22px;
-    }
-
-    #login#login {
-        padding: 22px;
-    }
-
-    .container-stars.container-stars {
-        height: 170px;
-        width: 170px;
-    }
-}
-
 html, body {
     height: 100%;
 }
@@ -75,6 +58,10 @@ input {
     padding: 0 25px;
 }
 
+#content {
+    text-align: center;
+}
+
 .title {
     font-family: Nunito-ExtraBold;
     font-size: 20px;
@@ -82,6 +69,11 @@ input {
     margin-bottom: 10px;
     letter-spacing: 0.8px;
     text-transform: uppercase
+}
+
+#present-congrats {
+    text-align: center;
+    padding: 0 25px;
 }
 
 .container-stars {
@@ -132,5 +124,45 @@ input {
 }
 
 .btn-container.bottom {
-    margin-top: 40px;
+    margin-top: 35px;
+}
+
+@media (max-width: 400px) {
+    #container {
+        width: 230px;
+        height: 345px;
+        padding: 22px;
+    }
+
+    #login {
+        padding: 22px;
+    }
+
+    #content {
+        padding: 0;
+    }
+
+    .container-stars {
+        height: 170px;
+        width: 170px;
+    }
+
+    .title {
+        font-size: 17px;
+    }
+
+    #present-img {
+        width: 160px;
+        height: 192px;
+    }
+
+    #present-congrats {
+        font-size: 13px;
+    }
+
+    .cta {
+        width: 155px;
+        height: 29px;
+        font-size: 12px;
+    }
 }

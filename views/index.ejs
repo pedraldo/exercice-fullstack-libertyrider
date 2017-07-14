@@ -1,10 +1,10 @@
 <% include ./partials/header %>
     <div id="container-wrapper">
-        <img src="/assets/stars.png" alt="" class="container-stars top">
+        <img src="/assets/img/stars.png" alt="" class="container-stars top">
         <div id="container">
             <div id="login">
                 <div class="title">
-                    <p>Bienvenue</p>
+                    <span>Bienvenue</span>
                 </div>
                 <div class="input-container">
                     <label for="email">Email</label>
@@ -19,10 +19,19 @@
                 </div>
             </div>
             <div id="content" style="display:none;">
-                Hello World !
-                <button id="btn-logout" class="cta">Déconnexion</button>
+                <div class="title">
+                    <span>Kit Voyage Vulcanet</span>
+                </div>
+                <img src="/assets/img/kit-vulcanet.jpg" id="present-img"/>
+                <div id="present-congrats">
+                    <span>Félicitations ! Reçois ce kit Vulcanet miniature pour l'emmener partout avec vous.</span>
+                </div>
+                <div class="btn-container bottom">
+                    <button id="btn-logout" class="cta">Obtenir</button>
+                <!--<button id="btn-logout" class="cta">Déconnexion</button>-->
+                </div>
             </div>
         </div>
-        <img src="/assets/stars.png" alt="" class="container-stars bottom">
+        <img src="/assets/img/stars.png" alt="" class="container-stars bottom">
     </div>
 <% include ./partials/footer %>

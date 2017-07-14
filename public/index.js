@@ -1,3 +1,8 @@
+const $ = require('jquery');
+const firebase = require('firebase');
+const axios = require('axios');
+const moment = require('moment');
+
 // Initialize Firebase
 const config = {
     apiKey: "AIzaSyCh-YZVdlpTpe-wkuNN9r1CBY0UgoP9WUo",
@@ -12,6 +17,7 @@ firebase.initializeApp(config);
 const state = 0;
 const loginDivId = "#login";
 const contentDivId = "#content";
+const lastRaceResult = {};
 
 // Submit login form handler
 $('#btn-login').click((event) => {
@@ -36,10 +42,15 @@ $('#btn-logout').click((event) => {
     logout();
 });
 
+// Firebase login
 function login(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password).then((firebaseData) => {
-        debugger;
         switchState(loginDivId, contentDivId);
+        alertLastRaceDriversAverageAge().then((averageDriversAge) => {
+            alert(`
+                Age moyen des pilotes : ${averageDriversAge} ans
+            `);
+        });
     }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
@@ -49,6 +60,7 @@ function login(email, password) {
     });
 }
 
+// Firebase logout
 function logout() {
     firebase.auth().signOut().then(() => {
         switchState(contentDivId, loginDivId);
@@ -61,3 +73,21 @@ function switchState(divToHide, divToShow) {
   $(divToHide).css('display', 'none');
   $(divToShow).css('display', 'block');
 }
+
+function alertLastRaceDriversAverageAge() {
+    return axios.get('http://ergast.com/api/f1/current/last/results.json').then((response) => {
+        const lastRaceData = response.data.MRData.RaceTable.Races[0];
+        const nbDrivers = lastRaceData.Results.length;
+        const driversAgeSum = lastRaceData.Results.reduce((ageSum, driverObject) => {
+            const age = moment().diff(driverObject.Driver.dateOfBirth, 'years');
+            return (ageSum + age);
+        }, 0);
+        const averageDriversAge = Math.round(driversAgeSum / nbDrivers);
+        return averageDriversAge;
+    }).catch((error) => {
+        console.log('ergast API Error : ' + error.message);
+        return -1;
+    })
+}
+
+exports.averageDriversAge = alertLastRaceDriversAverageAge;
