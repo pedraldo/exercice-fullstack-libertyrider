@@ -38,3 +38,8 @@ $ docker run -ti --name my-nodejs-container-dev -p 8080:3000 -v "$PWD":/usr/src/
 # Difficultés rencontrées
 * Construction / lancement conteneurs Docker à cause du processeur de mon ordinateur ne supportant pas la virtualisation VTx. J'ai utilisé docker-toolbox qui créé une docker-machine pour lancer docker dessus. Je devais donc tester le bon fonctionnement de l'application sur le conteneur en utilisant l'adresse IP de cette docker-machine. Tout ce processus m'a pris un peu de temps ...
 * Pas de difficultés particulières sur le reste du développement
+
+# Améliorations possibles
+* Utilisation de Sass ou autre préprocesseur pour le style (Less) même si ici la taille de l'application ne le nécessite pas
+* Affichage de l'age moyen des pilotes dans la page au lieu d'alert (choix d'alerte pour garder le texte de la page cohérent ...)
+* Autre moyen de visualiser le hash du dernier commit (?)
